@@ -212,6 +212,11 @@ public class formAnalise extends javax.swing.JFrame {
 
         campoAroma.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         campoAroma.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campoAroma.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                campoAromaFocusLost(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel4.setText("Sabor");
@@ -269,6 +274,11 @@ public class formAnalise extends javax.swing.JFrame {
         campoPosProva.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 campoPosProvaFocusLost(evt);
+            }
+        });
+        campoPosProva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPosProvaActionPerformed(evt);
             }
         });
 
@@ -853,6 +863,14 @@ public class formAnalise extends javax.swing.JFrame {
     private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
         limpar();
     }//GEN-LAST:event_btLimparActionPerformed
+
+    private void campoPosProvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPosProvaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPosProvaActionPerformed
+
+    private void campoAromaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoAromaFocusLost
+        atualizaPontuacao();
+    }//GEN-LAST:event_campoAromaFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLimpar;
